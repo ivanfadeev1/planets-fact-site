@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="#">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <title>The Planets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/spartan" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="body body--mercury">
+  <header class="header">
+    <div class="header__container">
+      <a class="header__logo" href="#" data-planet="mercury">The Planets</a>
+      <nav class="header__menu">
+        <ul class="header__menu-list">
+          <li class="header__menu-item">
+            <button class="header__menu-link" data-planet="mercury">Mercury</button>
+          </li>
+          <li class="header__menu-item">
+            <button class="header__menu-link" data-planet="venus">Venus</button>
+          </li>
+          <li class="header__menu-item">
+            <button class="header__menu-link" data-planet="earth">Earth</button>
+          </li>
+          <li class="header__menu-item">
+            <button class="header__menu-link" data-planet="mars">Mars</button>
+          </li>
+          <li class="header__menu-item">
+            <button class="header__menu-link" data-planet="jupiter">Jupiter</button>
+          </li>
+          <li class="header__menu-item">
+            <button class="header__menu-link" data-planet="saturn">Saturn</button>
+          </li>
+          <li class="header__menu-item">
+            <button class="header__menu-link" data-planet="uranus">Uranus</button>
+          </li>
+          <li class="header__menu-item">
+            <button class="header__menu-link" data-planet="neptune">Neptune</button>
+        </ul>
+        <button class="header__button">
+          <img class="header__button-icon" src="img/icon-hamburger.svg" alt="Burger icon">
+        </button>
+      </nav>
+    </div>
+  </header>
+  <main class="main">
+    <article class="main__container">
+      <div class="main__illustration">
+        <div class="main__illustration-wrapper">
+          <img class="main__illustration-planet" src="img/planet-mercury.svg" alt="Planet Mercury">
+          <img class="main__illustration-surface" src="img/geology-mercury.png" alt="Planet's geology">
+        </div>
+      </div>
+      <div class="main__content">
+        <h1 class="main__title">Mercury</h1>
+        <p class="main__excerpt">Mercury is the smallest planet in the Solar System and the closest to the Sun. Its orbit around the Sun takes 87.97 Earth days, the shortest of all the Sun's planets. Mercury is one of four terrestrial planets in the Solar System, and is a rocky body like Earth.</p>
+        <p class="main__source">Source :
+          <a class="main__source-link" href="#">Wikipedia</a>
+        </p>
+      </div>
+      <div class="main__tabs">
+        <button class="tab main__tab tab--active" data-section="overview" data-short-name="overview" data-full-name="overview">Overview</button>
+        <button class="tab main__tab" data-section="structure" data-short-name="structure" data-full-name="internal structure">Internal Structure</button>
+        <button class="tab main__tab" data-section="geology" data-short-name="surface" data-full-name="surface geology">Surface Geology</button>
+      </div>
+      <div class="parameter main__parameter">
+        <h2 class="parameter__title">Rotation Time</h2>
+        <p class="parameter__value" data-parameter="rotation">
+          <span class="parameter__value-number">58.6</span>
+          <span class="parameter__value-unit">days</span>
+        </p>
+      </div>
+      <div class="parameter main__parameter">
+        <h2 class="parameter__title">Revolution Time</h2>
+        <p class="parameter__value" data-parameter="revolution">
+          <span class="parameter__value-number">87.97</span>
+          <span class="parameter__value-unit">days</span>
+        </p>
+      </div>
+      <div class="parameter main__parameter">
+        <h2 class="parameter__title">Radius</h2>
+        <p class="parameter__value" data-parameter="radius">
+          <span class="parameter__value-number">2,439.7</span>
+          <span class="parameter__value-unit">km</span>
+        </p>
+      </div>
+      <div class="parameter main__parameter">
+        <h2 class="parameter__title">Average Temp</h2>
+        <p class="parameter__value" data-parameter="temperature">
+          <span class="parameter__value-number">430</span>
+          <span class="parameter__value-unit">°c</span>
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
+
+
