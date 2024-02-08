@@ -4,7 +4,7 @@ import data from './data.js';
 
 let currentPlanet = data[0];
 animateElement(document.querySelector('.main__illustration-planet'), 'animation-illustration-planet');
-for (let parameter of document.querySelectorAll('[data-parameter]')) animateElement(parameter, 'animation-parameter');
+for (const parameter of document.querySelectorAll('[data-parameter]')) animateElement(parameter, 'animation-parameter');
 
 /* Content change */
 
@@ -56,6 +56,7 @@ function resetActiveTab(newTab) {
 
 function handleTabButtonClick(event) {
     event.preventDefault();
+
     resetActiveTab(event.target);
     setContent(event.target.dataset.section);
 }
@@ -97,14 +98,17 @@ function setContent(section) {
     const chosenSection = currentPlanet[section];
     const illustrationWrapper = document.querySelector('.main__illustration-wrapper');
 
+    illustrationWrapper.lastElementChild.src = currentPlanet.images.geology;
+
     if (section === 'geology') {
       illustrationWrapper.classList.add('main__illustration-wrapper--geology');
-      illustrationWrapper.lastElementChild.src = currentPlanet.images.geology;
       animateElement(illustrationWrapper.lastElementChild, 'animation-illustration-surface');
     } else {
       illustrationWrapper.classList.remove('main__illustration-wrapper--geology');
       illustrationWrapper.firstElementChild.src = (section === 'overview') ? currentPlanet.images.planet : currentPlanet.images.internal;
     }
+
+    illustrationWrapper.firstElementChild.alt = `Planet ${currentPlanet.name}`;
 
     document.querySelector('.main__title').textContent = currentPlanet.name;
     document.querySelector('.main__excerpt').textContent = chosenSection.content;
@@ -114,11 +118,11 @@ function setContent(section) {
 }
 
 function setParameters() {
-    for (let parameter of document.querySelectorAll('[data-parameter]')) {
+    for (const parameter of document.querySelectorAll('[data-parameter]')) {
         if (parameter.dataset.parameter === 'temperature') {
-            parameter.firstElementChild.textContent = parseInt(currentPlanet.temperature);
+            parameter.textContent = currentPlanet.temperature;
         } else {
-            let [value, unit] = currentPlanet[parameter.dataset.parameter].split(' ');
+            const [value, unit] = currentPlanet[parameter.dataset.parameter].split(' ');
             parameter.firstElementChild.textContent = value;
             parameter.lastElementChild.textContent = unit;
         }
@@ -160,9 +164,3 @@ function handleMediaQueryChange(event) {
 
 mediaQuery.addEventListener('change', handleMediaQueryChange);
 handleMediaQueryChange(mediaQuery);
-
-
-
-
-
-
