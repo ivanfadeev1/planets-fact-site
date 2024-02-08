@@ -102,6 +102,7 @@ function setContent(section) {
 
     if (section === 'geology') {
       illustrationWrapper.classList.add('main__illustration-wrapper--geology');
+      illustrationWrapper.firstElementChild.src = currentPlanet.images.planet;
       animateElement(illustrationWrapper.lastElementChild, 'animation-illustration-surface');
     } else {
       illustrationWrapper.classList.remove('main__illustration-wrapper--geology');
